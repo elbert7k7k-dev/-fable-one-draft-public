@@ -28,16 +28,19 @@ If the user asks for automation, end-to-end execution, no manual confirmation, o
 4. Choose the best comic story direction.
 5. Write a 9-page Xiaohongshu comic script.
 6. Provide realistic scene image prompts and negative prompts.
-7. Provide text overlay instructions.
-8. Write Xiaohongshu copy.
-9. Reverse-build the Zhihu fable from the comic story.
-10. Run QA.
+7. If an Image2 / image generation tool is available, call it to generate 9 no-text base comic pages.
+8. After base pages are generated, complete Chinese text overlay and produce 9 final upload pages.
+9. Provide text overlay instructions.
+10. Write Xiaohongshu copy.
+11. Reverse-build the Zhihu fable from the comic story.
+12. Run QA.
 
 ## Image Guardrail
 
 Final images must not be local script placeholders. Use realistic scene generation or equivalent high-fidelity visual generation for the base image. Local scripts can only add text, watermark, crop, check size, and make contact sheets.
 
+When Image2 or equivalent image generation is available, do not stop at prompts. Generate one page at a time, 9 pages total, 1024x1536 portrait, 2 columns x 3 rows. First generate no-text base pages, then add Chinese subtitles/dialogue as no-background outlined text to create final upload pages. If no image tool is available, say so and output worker prompts instead.
+
 ## Safety
 
 Do not publish to platforms. Do not read credentials, tokens, cookies, QR codes, passwords, App Secrets, private keys, browser profiles, or account state.
-
