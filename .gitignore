@@ -1,0 +1,48 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Runtime caches
+__pycache__/
+.pytest_cache/
+node_modules/
+.venv/
+venv/
+dist/
+build/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+cache/
+
+# Generated media and bulky outputs
+generated_images/
+images/
+outputs/
+deliverables/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.mov
+*.zip
+
+# Secrets and local account state
+.env
+*.secret
+*.key
+*.pem
+auth.json
+cap_sid
+.sandbox-secrets
+cookies*
+tokens*
+browser-state/
+profile/
+
