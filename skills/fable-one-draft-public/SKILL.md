@@ -14,6 +14,7 @@ Use this skill when the user wants to generate a complete Chinese self-media fab
 - Realistic scene image prompts.
 - Xiaohongshu publishing copy in Markdown and standalone HTML.
 - Zhihu fable article in Markdown and HTML image-insertion edition.
+- Zhihu publishing recommendation pack with search keywords, 3 topic keywords, and 1 submission direction.
 - QA checklist.
 
 ## Core Rule
@@ -33,7 +34,8 @@ If the user asks for automation, end-to-end execution, no manual confirmation, o
 9. Provide text overlay instructions.
 10. Write Xiaohongshu copy in Markdown and standalone HTML.
 11. Reverse-build the Zhihu fable from the comic story and produce a Zhihu HTML image-insertion edition.
-12. Run QA and verify required image files and HTML files actually exist.
+12. Produce Zhihu publishing recommendation: search keywords, 3 topic keywords, 1 submission question/direction, and reasons.
+13. Run QA and verify required image files, HTML files, and Zhihu recommendation file actually exist.
 
 ## Image Guardrail
 
@@ -52,6 +54,15 @@ Full delivery is also incomplete if it only contains images or Markdown. A compl
 - QA proof that both HTML files actually exist.
 
 If final upload images exist, the Zhihu HTML must insert the 9 comic images in the story body before "作者的话" using `<figure><img></figure>` or equivalent image blocks. Markdown copies are useful backups, but Markdown alone is not a complete delivery.
+
+Zhihu publishing recommendation is required. It must include:
+
+- Search keywords for the Zhihu publishing UI.
+- Exactly 3 recommended topic keywords.
+- Exactly 1 recommended submission question/direction.
+- Reasons based on article mechanism, relevance, risk boundary, and reader intent.
+
+If live Zhihu browsing is unavailable, mark the recommendation as "待发布时复核" and do not invent heat numbers. Do not log in, do not click publish, and do not read credentials.
 
 Text overlay defaults to no-background outlined text: no white caption boxes, no black bars, no large translucent backing, 8-14 Chinese characters per panel when possible, 1-2 lines, placed in empty scene areas without covering faces, hand actions, or key objects.
 
