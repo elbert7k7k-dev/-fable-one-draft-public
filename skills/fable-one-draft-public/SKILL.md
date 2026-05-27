@@ -12,8 +12,8 @@ Use this skill when the user wants to generate a complete Chinese self-media fab
 - Automatic topic selection from public trends.
 - Xiaohongshu 9-page comic script.
 - Realistic scene image prompts.
-- Xiaohongshu publishing copy.
-- Zhihu fable article.
+- Xiaohongshu publishing copy in Markdown and standalone HTML.
+- Zhihu fable article in Markdown and HTML image-insertion edition.
 - QA checklist.
 
 ## Core Rule
@@ -31,9 +31,9 @@ If the user asks for automation, end-to-end execution, no manual confirmation, o
 7. If an Image2 / image generation tool is available, call it directly to generate 9 no-text base comic pages. Do not only write prompts.
 8. After base pages are generated, complete Chinese text overlay and produce 9 final upload pages. Do not stop at no-text base pages.
 9. Provide text overlay instructions.
-10. Write Xiaohongshu copy.
-11. Reverse-build the Zhihu fable from the comic story.
-12. Run QA.
+10. Write Xiaohongshu copy in Markdown and standalone HTML.
+11. Reverse-build the Zhihu fable from the comic story and produce a Zhihu HTML image-insertion edition.
+12. Run QA and verify required image files and HTML files actually exist.
 
 ## Image Guardrail
 
@@ -44,6 +44,14 @@ When Image2 or equivalent image generation is available, do not stop at prompts.
 Each comic page must contain clear story action, not mood-only scenery or knowledge-card layout. The 9-page script must include 6 panel actions, per-panel overlay text, a page-level summary subtitle, character actions, expressions, key objects, and scene changes. Page 9 is an author-note page but must still be a six-panel life-scene comic page.
 
 Final delivery is incomplete until both 9 no-text base pages and 9 final text-overlaid upload pages exist. If no image tool is available, explicitly say images were not generated and output complete worker prompts, negative prompts, overlay text list, and QA criteria instead.
+
+Full delivery is also incomplete if it only contains images or Markdown. A complete pass requires:
+
+- Xiaohongshu publishing-copy HTML.
+- Zhihu fable article HTML image-insertion edition.
+- QA proof that both HTML files actually exist.
+
+If final upload images exist, the Zhihu HTML must insert the 9 comic images in the story body before "作者的话" using `<figure><img></figure>` or equivalent image blocks. Markdown copies are useful backups, but Markdown alone is not a complete delivery.
 
 Text overlay defaults to no-background outlined text: no white caption boxes, no black bars, no large translucent backing, 8-14 Chinese characters per panel when possible, 1-2 lines, placed in empty scene areas without covering faces, hand actions, or key objects.
 
